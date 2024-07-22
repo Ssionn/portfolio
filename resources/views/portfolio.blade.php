@@ -54,7 +54,7 @@
                 <h2 class="text-4xl font-bold text-white mb-8 text-center">Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     @foreach($projects as $project)
-                        <a href="https://github.com/{{ $project->owner }}/{{ $project->repo }} }}" target="_blank" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 opacity-0 translate-y-4 transition-all duration-700 ease-out h-full" data-project-card>
+                        <a href="https://github.com/{{ $project->owner }}/{{ $project->repo }}" target="_blank" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 opacity-0 translate-y-4 transition-all duration-700 ease-out h-full" data-project-card>
                             <img class="object-cover w-full h-48 rounded-t-lg" src="{{ asset('storage/images/projects/' . $project['repo'] . '.png') }}" alt="{{ $project['repo'] }} Project">
                             <div class="flex flex-col justify-between p-4 flex-grow">
                                 <div>
