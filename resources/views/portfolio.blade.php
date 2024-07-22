@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="container mx-auto max-w-6xl p-4 sm:p-6 lg:p-8 mt-20">
+            <div class="container mx-auto max-w-6xl p-6 sm:p-6 lg:p-8 mt-20">
                 <h2 class="text-4xl font-bold text-white mb-8 text-center">Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     @foreach($projects as $project)
