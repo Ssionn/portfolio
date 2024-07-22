@@ -106,9 +106,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-## Contact
-
-Casper - [Your Email]
-
-Project Link: [https://github.com/yourusername/your-portfolio-repo](https://github.com/yourusername/your-portfolio-repo)
