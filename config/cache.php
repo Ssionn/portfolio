@@ -33,6 +33,11 @@ return [
 
     'stores' => [
 
+        'file' => [
+            'driver' => 'file',
+            'path' => '/tmp/cache',
+        ],
+
         'array' => [
             'driver' => 'array',
             'serialize' => false,

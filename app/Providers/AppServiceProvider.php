@@ -19,6 +19,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $cachePath = '/tmp/cache';
+        $viewsPath = '/tmp/views';
+
+        if (!is_dir($cachePath)) {
+            mkdir($cachePath, 0755, true);
+        }
+
+        if (!is_dir($viewsPath)) {
+            mkdir($viewsPath, 0755, true);
+        }
     }
 }
