@@ -34,8 +34,8 @@ This project is a personal developer portfolio showcasing my skills, projects, a
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/your-portfolio-repo.git
-   cd your-portfolio-repo
+   git clone https://github.com/ssionn/portfolio.git
+   cd portfolio
    ```
 
 2. Install PHP dependencies:
