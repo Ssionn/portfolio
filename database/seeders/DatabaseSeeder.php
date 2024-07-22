@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Project;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,11 +14,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $projects = [
+            [
+                'owner' => 'Ssionn',
+                'repo' => 'dotfiles',
+                'description' => 'My personal dotfiles for Neovim configuration and plugins.'
+            ],
+            [
+                'owner' => 'Ssionn',
+                'repo' => 'programming-blog',
+                'description' => 'A blog project using OAuth for authentication and minimal JavaScript.'
+            ],
+            [
+                'owner' => 'Ssionn',
+                'repo' => 'todo-app',
+                'description' => 'A simple, yet effective todo application.'
+            ],
+            [
+                'owner' => 'Ssionn',
+                'repo' => 'github-data-dashboard',
+                'description' => 'A dashboard for visualizing GitHub data and statistics.'
+            ],
+        ];
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        foreach ($projects as $project) {
+            Project::factory()->create($project);
+        }
     }
 }

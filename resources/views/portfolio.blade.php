@@ -60,7 +60,6 @@
                                 <div>
                                     <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $project['owner'] }}/{{ $project['repo'] }}</h3>
                                     <p class="mb-3 font-normal text-gray-700">
-                                        {{-- You might want to add a description field to your $projects array in the controller --}}
                                         {{ $project['description'] ?? 'An awesome project.' }}
                                     </p>
                                 </div>
