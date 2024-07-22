@@ -52,6 +52,12 @@ return [
 
     'channels' => [
 
+        'syslog' => [
+            'driver' => 'syslog',
+            'level' => 'debug',
+            'facility' => LOG_USER,
+        ],
+
         'stack' => [
             'driver' => 'stack',
             'channels' => explode(',', env('LOG_STACK', 'single')),
