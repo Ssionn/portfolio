@@ -4,6 +4,19 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+
+        <!-- Apple Touch Icon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+
+        <!-- Android Chrome Icons -->
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('android-chrome-192x192.png') }}">
+        <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('android-chrome-512x512.png') }}">
+
+        <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+
         <title>Portfolio</title>
 
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -87,5 +100,27 @@
                 </div>
             </div>
         </main>
+
+        <footer class="bg-gray-800 text-white py-4 mt-12">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center text-sm">
+                    <div class="mb-2 md:mb-0">
+                        <p>&copy; {{ date('Y') }} Casper Kizewski. All rights reserved.</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p>Licensed under
+                            <a href="https://github.com/ssionn/portfolio/blob/production/LICENSE"
+                               class="text-blue-300 hover:text-blue-100 underline"
+                               target="_blank"
+                               rel="noopener noreferrer">MIT License</a>
+                        </p>
+                        <a href="https://github.com/ssionn/portfolio"
+                           class="text-blue-300 hover:text-blue-100 underline"
+                           target="_blank"
+                           rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
