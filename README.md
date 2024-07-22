@@ -4,6 +4,9 @@
 
 This project is a personal developer portfolio showcasing my skills, projects, and professional information. It's built with Laravel and integrates with the GitHub API to display real-time statistics for my repositories.
 
+![image](https://github.com/user-attachments/assets/243dffbe-8dbc-4b6e-bf03-e3564a6facc6)
+
+
 ## Features
 
 - Dynamic project cards with GitHub repository statistics
