@@ -3,17 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use App\Services\GithubService;
+use Ssionn\GithubForgeLaravel\Facades\GithubForge;
 
 class PortfolioController extends Controller
 {
-    private $githubService;
-
-    public function __construct(GithubService $githubService)
-    {
-        $this->githubService = $githubService;
-    }
-
     public function index()
     {
         $projects = Project::all();
@@ -21,7 +14,9 @@ class PortfolioController extends Controller
         $projectStats = [];
 
         foreach($projects as $project) {
-            $projectStats[$project->repo] = $this->githubService->getRepoStats($project->owner, $project->repo);
+            $projectStats[$project->repo] = GithubForge::getRepository($project->owner, $project->repo);
+            $projectStats[$project->repo]['commits_count'] = count(GithubForge::getCommitsFromRepository($project->owner, $project->repo));
+            $projectStats[$project->repo]['contributors_count'] = count(GithubForge::getContributors($project->owner, $project->repo));
         }
 
         return view('portfolio', compact('projects', 'projectStats'));
