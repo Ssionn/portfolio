@@ -1,5 +1,7 @@
 # Portfolio
 
+[![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2F7fed714d-0598-47d3-97e5-2347b830fafc&style=for-the-badge)](https://forge.laravel.com/servers/826724/sites/2417168)
+
 ## Overview
 
 This project is a personal developer portfolio showcasing my skills, projects, and professional information. It's built with Laravel and integrates with the GitHub API to display real-time statistics for my repositories.
