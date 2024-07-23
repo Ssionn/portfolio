@@ -15,8 +15,6 @@
         <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('android-chrome-192x192.png') }}">
         <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('android-chrome-512x512.png') }}">
 
-        <link rel="manifest" href="{{ asset('site.webmanifest') }}">
-
         <title>Portfolio</title>
 
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -53,7 +51,7 @@
                         >
                     </div>
                     <div class="w-full md:w-1/2 text-center md:text-left mt-6 md:mt-0">
-                        <h1 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+                        <h1 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#FFD54F] to-[#FFA000]">
                             Hi, My name is Casper
                         </h1>
                         <p class="text-xl text-white">
