@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ffbebb7ec84fd5020a8736ec853e0b3",
+    "content-hash": "c070f73876f12e88c3fd81757e541c5d",
     "packages": [
         {
             "name": "brick/math",
@@ -3110,16 +3110,16 @@
         },
         {
             "name": "ssionn/github-forge-laravel",
-            "version": "v0.0.56",
+            "version": "v0.0.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ssionn/github-forge.git",
-                "reference": "ff017490e28849ab83a24937ff2593c490271617"
+                "reference": "0a9544f15c3b699abc244c45273562c7bb599756"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ssionn/github-forge/zipball/ff017490e28849ab83a24937ff2593c490271617",
-                "reference": "ff017490e28849ab83a24937ff2593c490271617",
+                "url": "https://api.github.com/repos/Ssionn/github-forge/zipball/0a9544f15c3b699abc244c45273562c7bb599756",
+                "reference": "0a9544f15c3b699abc244c45273562c7bb599756",
                 "shasum": ""
             },
             "require": {
@@ -3160,9 +3160,9 @@
             "description": "A GitHub REST API client for Laravel",
             "support": {
                 "issues": "https://github.com/Ssionn/github-forge/issues",
-                "source": "https://github.com/Ssionn/github-forge/tree/v0.0.56"
+                "source": "https://github.com/Ssionn/github-forge/tree/v0.0.57"
             },
-            "time": "2024-07-23T17:06:44+00:00"
+            "time": "2024-07-23T18:18:51+00:00"
         },
         {
             "name": "symfony/clock",
