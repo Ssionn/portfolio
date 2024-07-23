@@ -35,6 +35,11 @@ class DatabaseSeeder extends Seeder
                 'repo' => 'github-data-dashboard',
                 'description' => 'A dashboard for visualizing GitHub data and statistics.'
             ],
+            [
+                'owner' => 'Ssionn',
+                'repo' => 'github-forge',
+                'description' => 'A Laravel package to integrate GitHub API functionality.'
+            ],
         ];
 
         foreach ($projects as $project) {
