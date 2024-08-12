@@ -1,12 +1,18 @@
 <x-app-layout>
-    <div class="flex flex-col justify-center items-center">
-        <div class="flex flex-row rounded-b-md bg-white p-2">
+    <div class="flex justify-between items-center bg-white p-4 rounded-b-md">
+        <div>
             <span class="text-2xl font-semibold">{{ __('Modify Portfolio') }}</span>
         </div>
-        <div class="mt-4">
-            <a href="{{ route('admin.create') }}" class="py-2 px-4 bg-white rounded-md">
+        <div class="inline-flex space-x-4">
+            <a href="{{ route('admin.create') }}" class="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600">
                 Create Project
             </a>
+            <form action="{{ route('logout') }}" method="post">
+                @csrf
+                <button type="submit" class="py-2 px-4 bg-red-500 rounded-md text-white">
+                    Logout
+                </button>
+            </form>
         </div>
     </div>
 
