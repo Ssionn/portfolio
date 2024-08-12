@@ -23,6 +23,30 @@ class PanelController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('admin.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'createRepoOwner' => 'required|string',
+            'createRepoName' => 'required|string',
+            'description' => 'required|string',
+        ]);
+
+        $this->project = new Project();
+
+        $this->project->repo = $request->createRepoName;
+        $this->project->owner = $request->createRepoOwner;
+        $this->project->description = $request->description;
+
+        $this->project->save();
+
+        return redirect()->route('admin.index');
+    }
+
     public function edit($projectId)
     {
         $decodedProjectId = $this->decodeHash($projectId);

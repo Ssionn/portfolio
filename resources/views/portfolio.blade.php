@@ -66,7 +66,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     @foreach($projects as $project)
                         <a href="https://github.com/{{ $project->owner }}/{{ $project->repo }}" target="_blank" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 opacity-0 translate-y-4 transition-all duration-700 ease-out h-full" data-project-card>
-                            <img class="object-cover w-full h-48 rounded-t-lg" src="{{ asset('storage/images/projects/' . $project['repo'] . '.png') }}" alt="{{ $project['repo'] }} Project">
+                            <img class="object-cover w-full h-48 rounded-t-lg" src="https://opengraph.githubassets.com/{{ $project->id }}/{{ $project->owner }}/{{ $project->repo }}" alt="{{ $project['repo'] }} image">
                             <div class="flex flex-col justify-between p-4 flex-grow">
                                 <div>
                                     <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $project->owner }}/{{ $project->repo }}</h3>

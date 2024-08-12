@@ -1,7 +1,12 @@
 <x-app-layout>
-    <div class="flex justify-center items-center">
-        <div class="rounded-b-md bg-white p-2">
+    <div class="flex flex-col justify-center items-center">
+        <div class="flex flex-row rounded-b-md bg-white p-2">
             <span class="text-2xl font-semibold">{{ __('Modify Portfolio') }}</span>
+        </div>
+        <div class="mt-4">
+            <a href="{{ route('admin.create') }}" class="py-2 px-4 bg-white rounded-md">
+                Create Project
+            </a>
         </div>
     </div>
 
@@ -20,6 +25,9 @@
                             Project Owner
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            <a href="{{ route('portfolio') }}">
+                                <img src="{{ asset('storage/images/gear-black.svg') }}" class="h-6 w-6 hover:scale-125 transition ease-in-out delay-150" />
+                            </a>
                         </th>
                     </tr>
                 </thead>

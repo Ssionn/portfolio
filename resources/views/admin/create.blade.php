@@ -2,7 +2,7 @@
 
     <div class="flex justify-center items-center">
         <div class="bg-white rounded-b-md p-2">
-            <span class="text-2xl font-semibold">{{ __($project->repo) }}</span>
+            <span class="text-2xl font-semibold">{{ __('Create project') }}</span>
         </div>
     </div>
 
@@ -13,34 +13,30 @@
             </h1>
 
             <div class="mt-4">
-                <form action="" method="post" class="space-y-4">
+                <form action="{{ route('admin.store') }}" method="post" class="space-y-4">
                     @csrf
-                    @method('PATCH')
 
                     <input
                         type="text"
-                        placeholder="Project Owner"
-                        id="repoOwner"
-                        name="repoOwner"
-                        value="{{ old('projectOwner', $project->owner) }}"
+                        placeholder="Project owner"
+                        id="createRepoOwner"
+                        name="createRepoOwner"
                         class="appearance-none rounded-md placeholder:text-gray-300 border border-gray-300 w-full bg-gray-100"
                     />
 
                     <input
                         type="text"
                         placeholder="Project name"
-                        id="repoName"
-                        name="repoName"
-                        value="{{ old('projectName', $project->repo) }}"
+                        id="createRepoName"
+                        name="createRepoName"
                         class="appearance-none rounded-md placeholder:text-gray-300 border border-gray-300 w-full bg-gray-100"
                     />
 
                     <textarea
-                        class="w-full border border-gray-300 bg-gray-100 placeholder:text-gray-300 rounded-md resize-y" placeholder="Add a description here."
+                        class="w-full border border-gray-300 bg-gray-100 placeholder:text-gray-300 rounded-md resize-y" placeholder="Add a description here"
                         id="description"
                         name="description"
                     >
-                        {{ preg_replace('/\s+/', ' ', old('description', $project->description)) }}
                     </textarea>
 
                     <button type="submit" class="w-full bg-blue-400 p-2 rounded-md text-white">
