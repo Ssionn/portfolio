@@ -13,7 +13,7 @@ class PortfolioController extends Controller
 
         $projectStats = [];
 
-        foreach($projects as $project) {
+        foreach ($projects as $project) {
             $projectStats[$project->repo] = GithubForge::getRepository($project->owner, $project->repo);
             $projectStats[$project->repo]['commits_count'] = count(GithubForge::getCommitsFromRepository($project->owner, $project->repo));
             $projectStats[$project->repo]['contributors_count'] = count(GithubForge::getContributors($project->owner, $project->repo));

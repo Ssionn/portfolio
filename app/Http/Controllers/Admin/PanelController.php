@@ -15,6 +15,7 @@ class PanelController extends Controller
     {
         $this->project = Project::all()->map(function ($project) {
             $project->truncated_description = $this->truncateString($project->description, 20);
+
             return $project;
         });
 
@@ -36,7 +37,7 @@ class PanelController extends Controller
             'description' => 'required|string',
         ]);
 
-        $this->project = new Project();
+        $this->project = new Project;
 
         $this->project->repo = $request->createRepoName;
         $this->project->owner = $request->createRepoOwner;
@@ -85,7 +86,7 @@ class PanelController extends Controller
 
         $this->project = Project::find($decodedProjectId);
 
-        if(! $this->project) {
+        if (! $this->project) {
             return;
         }
 
@@ -109,7 +110,8 @@ class PanelController extends Controller
         return $decryptedProjectId;
     }
 
-    protected function truncateString($string, $limit) {
+    protected function truncateString($string, $limit)
+    {
         if (strlen($string) > $limit) {
             return substr($string, 0, $limit) . '...';
         }

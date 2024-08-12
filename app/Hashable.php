@@ -31,4 +31,3 @@ trait Hashable
         return $this->hashids->encode($this->getKey());
     }
 }
-
