@@ -2,6 +2,6 @@
 
 return [
 
-    'token' => env('GITHUB_TOKEN')
+    'token' => env('GITHUB_TOKEN'),
 
 ];

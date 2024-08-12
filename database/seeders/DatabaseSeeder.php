@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
-use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -18,27 +17,27 @@ class DatabaseSeeder extends Seeder
             [
                 'owner' => 'Ssionn',
                 'repo' => 'dotfiles',
-                'description' => 'My personal dotfiles for Neovim configuration and plugins.'
+                'description' => 'My personal dotfiles for Neovim configuration and plugins.',
             ],
             [
                 'owner' => 'Ssionn',
                 'repo' => 'programming-blog',
-                'description' => 'A blog project using OAuth for authentication and minimal JavaScript.'
+                'description' => 'A blog project using OAuth for authentication and minimal JavaScript.',
             ],
             [
                 'owner' => 'Ssionn',
                 'repo' => 'todo-app',
-                'description' => 'A simple, yet effective todo application.'
+                'description' => 'A simple, yet effective todo application.',
             ],
             [
                 'owner' => 'Ssionn',
                 'repo' => 'github-data-dashboard',
-                'description' => 'A dashboard for visualizing GitHub data and statistics.'
+                'description' => 'A dashboard for visualizing GitHub data and statistics.',
             ],
             [
                 'owner' => 'Ssionn',
                 'repo' => 'github-forge',
-                'description' => 'A Laravel package to integrate GitHub API functionality.'
+                'description' => 'A Laravel package to integrate GitHub API functionality.',
             ],
         ];
 
