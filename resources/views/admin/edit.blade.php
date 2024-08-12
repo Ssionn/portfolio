@@ -1,7 +1,7 @@
 <x-app-layout>
 
-    <div class="flex justify-center items-center">
-        <div class="bg-white rounded-b-md p-2">
+    <div class="flex justify-between items-center bg-white p-4 rounded-b-md">
+        <div>
             <span class="text-2xl font-semibold">{{ __($project->repo) }}</span>
         </div>
     </div>

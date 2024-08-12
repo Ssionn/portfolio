@@ -19,5 +19,7 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/edit/{projectId}', [PanelController::class, 'edit'])->name('admin.edit');
         Route::patch('/edit/{projectId}', [PanelController::class, 'update'])->name('admin.update');
+
+        Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     });
 });
