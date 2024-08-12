@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
             Project::create($project);
         }
 
-        User::firstOrCreate([
+        User::create([
             'id' => 1,
         ], [
             'name' => 'Ssionn',
