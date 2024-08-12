@@ -46,9 +46,7 @@ class DatabaseSeeder extends Seeder
             Project::create($project);
         }
 
-        User::create([
-            'id' => 1,
-        ], [
+        User::firstOrCreate([
             'name' => 'Ssionn',
             'email' => 'ssionn@admin.com',
             'password' => Hash::make(env('ADMIN_PASSWORD')),
