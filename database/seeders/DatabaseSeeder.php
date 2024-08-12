@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -45,5 +46,12 @@ class DatabaseSeeder extends Seeder
         foreach ($projects as $project) {
             Project::factory()->create($project);
         }
+
+        User::create([
+            'id' => 1,
+            'name' => 'Ssionn',
+            'email' => 'ssionn@admin.com',
+            'password' => Hash::make(env('ADMIN_PASSWORD')),
+        ]);
     }
 }
