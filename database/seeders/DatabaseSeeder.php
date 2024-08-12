@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
             Project::create($project);
         }
 
-        User::firstOrCreate([
+        User::create([
             'id' => 1,
         ], [
             'name' => 'Ssionn',
