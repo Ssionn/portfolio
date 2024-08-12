@@ -13,6 +13,7 @@ Route::post('/admin/login', [LoginController::class, 'authenticate'])->name('log
 Route::middleware(['auth'])->group(function () {
     Route::prefix('/admin-panel')->group(function () {
         Route::get('/', [PanelController::class, 'index'])->name('admin.index');
+        Route::delete('/delete/{projectId}', [PanelController::class, 'delete'])->name('admin.delete');
         Route::get('/edit/{projectId}', [PanelController::class, 'edit'])->name('admin.edit');
         Route::patch('/edit/{projectId}', [PanelController::class, 'update'])->name('admin.update');
     });

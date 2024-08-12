@@ -13,7 +13,10 @@ class PanelController extends Controller
 
     public function index()
     {
-        $this->project = Project::all();
+        $this->project = Project::all()->map(function ($project) {
+            $project->truncated_description = $this->truncateString($project->description, 20);
+            return $project;
+        });
 
         return view('admin.index', [
             'projects' => $this->project,
@@ -34,6 +37,7 @@ class PanelController extends Controller
     public function update(Request $request, $projectId)
     {
         $request->validate([
+            'repoOwner' => 'required|string',
             'repoName' => 'required|string',
             'description' => 'required|string',
         ]);
@@ -42,10 +46,26 @@ class PanelController extends Controller
 
         $this->project = Project::find($decodedProjectId);
 
+        $this->project->owner = $request->repoOwner;
         $this->project->repo = $request->repoName;
         $this->project->description = $request->description;
 
         $this->project->save();
+
+        return redirect()->route('admin.index');
+    }
+
+    public function delete($projectId)
+    {
+        $decodedProjectId = $this->decodeHash($projectId);
+
+        $this->project = Project::find($decodedProjectId);
+
+        if(! $this->project) {
+            return;
+        }
+
+        $this->project->delete();
 
         return redirect()->route('admin.index');
     }
@@ -63,5 +83,13 @@ class PanelController extends Controller
         $decryptedProjectId = $decoded[0];
 
         return $decryptedProjectId;
+    }
+
+    protected function truncateString($string, $limit) {
+        if (strlen($string) > $limit) {
+            return substr($string, 0, $limit) . '...';
+        }
+
+        return $string;
     }
 }

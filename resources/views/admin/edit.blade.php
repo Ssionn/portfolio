@@ -20,6 +20,15 @@
                     <input
                         type="text"
                         placeholder="Project name"
+                        id="repoOwner"
+                        name="repoOwner"
+                        value="{{ old('projectOwner', $project->owner) }}"
+                        class="appearance-none rounded-md placeholder:text-gray-300 border border-gray-300 w-full bg-gray-100"
+                    />
+
+                    <input
+                        type="text"
+                        placeholder="Project name"
                         id="repoName"
                         name="repoName"
                         value="{{ old('projectName', $project->repo) }}"
@@ -31,7 +40,7 @@
                         id="description"
                         name="description"
                     >
-                        {{ $project->description }}
+                        {{ preg_replace('/\s+/', ' ', old('description', $project->description)) }}
                     </textarea>
 
                     <button type="submit" class="w-full bg-blue-400 p-2 rounded-md text-white">
