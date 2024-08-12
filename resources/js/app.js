@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }, {
         threshold: 0.1,
-        rootMargin: '-100px 0px'
+        rootMargin: '-50px 0px'
     });
 
     document.querySelectorAll('[data-project-card]').forEach(card => {
