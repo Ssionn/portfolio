@@ -36,6 +36,12 @@
                     <a href="https://www.linkedin.com/in/ssionn/" target="_blank">
                         <img src="{{ asset('storage/images/linkedIn.png') }}" class="h-6 w-6 hover:scale-125 transition ease-in-out delay-150" alt="LinkedIn Logo"/>
                     </a>
+
+                    @auth
+                        <a href="{{ route('admin.index') }}">
+                            <img src="{{ asset('storage/images/swatch-white.svg') }}" class="h-6 w-6 hover:scale-125 transition ease-in-out delay-150" alt="LinkedIn Logo"/>
+                        </a>
+                    @endauth
                 </div>
             </div>
         </header>
