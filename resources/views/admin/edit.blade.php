@@ -36,7 +36,7 @@
                     />
 
                     <textarea
-                        class="w-full border border-gray-300 bg-gray-100 placeholder:text-gray-300 rounded-md resize-y" placeholder="Add a description here."
+                        class="w-full border border-gray-300 bg-gray-100 placeholder:text-gray-300 rounded-md h-36 resize-y" placeholder="Add a description here."
                         id="description"
                         name="description"
                     >

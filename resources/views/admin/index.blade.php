@@ -1,68 +1,48 @@
 <x-app-layout>
-    <div class="flex justify-between items-center bg-white p-4 rounded-b-md">
-        <div>
-            <span class="text-2xl font-semibold">{{ __('Modify Portfolio') }}</span>
+    <div class="flex flex-row space-x-4 justify-between items-center bg-white p-4 rounded-b-md">
+        <div class="">
+            <span class="text-xl sm:text-2xl font-semibold">{{ __('Modify Portfolio') }}</span>
         </div>
-        <div class="inline-flex space-x-4">
-            <a href="{{ route('admin.create') }}" class="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600">
-                Create Project
+        <div class="flex flex-row sm:space-y-0 space-x-4">
+            <a href="{{ route('admin.create') }}"
+                class="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-center">
+                Create
             </a>
-            <form action="{{ route('logout') }}" method="post">
+            <form action="{{ route('logout') }}" method="post" class="w-full sm:w-auto">
                 @csrf
-                <button type="submit" class="py-2 px-4 bg-red-500 rounded-md text-white">
+                <button type="submit" class="py-2 px-4 bg-red-500 rounded-md text-white w-full sm:w-auto text-center">
                     Logout
                 </button>
             </form>
         </div>
     </div>
 
-    <div class="flex flex-col justify-center mt-36 items-center">
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">
-                            Project Name
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Project Description
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Project Owner
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            <a href="{{ route('portfolio') }}">
-                                <img src="{{ asset('storage/images/gear-black.svg') }}" class="h-6 w-6 hover:scale-125 transition ease-in-out delay-150" />
-                            </a>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($projects as $project)
-                        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                                {{ $project->repo }}
-                            </th>
-                            <td class="px-6 py-4">
-                                {{ $project->truncated_description }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $project->owner }}
-                            </td>
-                            <td class="flex flex-row px-6 py-4 space-x-2">
-                                <a href="{{ route('admin.edit', $project->hashid) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                <form action="{{ route('admin.delete', $project->hashid) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
+    <div class="flex flex-col mt-10 items-center p-2 sm:p-0 space-y-4">
+        @foreach ($projects as $project)
+            <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg w-full sm:w-2/4 md:w-1/4 p-4 relative">
+                <div class="absolute top-4 right-4">
+                    <a href="{{ route('portfolio') }}">
+                        <img src="{{ asset('storage/images/gear-black.svg') }}"
+                            class="h-6 w-6 hover:scale-125 transition ease-in-out delay-150" />
+                    </a>
+                </div>
 
-                                    <button type="submit" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-medium text-gray-900 dark:text-white">{{ $project->repo }}</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">{{ $project->truncated_description }}</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 mt-1">Owned by: {{ $project->owner }}</span>
+                </div>
 
+                <div class="flex justify-end mt-4 space-x-4">
+                    <a href="{{ route('admin.edit', $project->hashid) }}"
+                        class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <form action="{{ route('admin.delete', $project->hashid) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-red-600 dark:text-red-500 hover:underline">Delete</button>
+                    </form>
+                </div>
+            </div>
+        @endforeach
     </div>
 </x-app-layout>
