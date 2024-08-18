@@ -52,7 +52,7 @@
                             src="{{ asset('storage/images/me.jpeg') }}"
                             alt="Casper's portrait"
                             class="rounded-2xl w-72 h-72 object-cover mx-auto md:mx-0 shadow-lg"
-                        >
+                        />
                     </div>
                     <div class="w-full md:w-1/2 text-center md:text-left mt-6 md:mt-0">
                         <h1 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#FFD54F] to-[#FFA000]">
