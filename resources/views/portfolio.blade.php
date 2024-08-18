@@ -39,7 +39,6 @@
                     @auth
                         <a href="{{ route('admin.index') }}">
                             <img src="{{ asset('storage/images/swatch-white.svg') }}" class="h-6 w-6 hover:scale-125 transition ease-in-out duration-300"/>
-                        </a>
                     @endauth
                 </div>
             </div>
