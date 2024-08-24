@@ -39,6 +39,7 @@
                     @auth
                         <a href="{{ route('admin.index') }}">
                             <img src="{{ asset('storage/images/swatch-white.svg') }}" class="h-6 w-6 hover:scale-125 transition ease-in-out duration-300"/>
+                        </a>
                     @endauth
                 </div>
             </div>
@@ -81,19 +82,19 @@
                                 <div class="flex flex-wrap items-center text-sm text-gray-500 gap-4 mt-auto pt-4 border-t border-gray-200">
                                     <span class="flex items-center">
                                         <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path></svg>
-                                        <span class="pt-1">{{ $projectStats[$project->repo]['contributors_count'] ?? 0 }} Contributors</span>
+                                        <span>{{ $project->contributor_count ?? 0 }} Contributors</span>
                                     </span>
                                     <span class="flex items-center">
                                         <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
-                                        <span class="pt-1">{{ $projectStats[$project->repo]['commits_count'] ?? 0 }} Commits</span>
+                                        <span>{{ $project->commit_count ?? 0 }} Commits</span>
                                     </span>
                                     <span class="flex items-center">
                                         <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path></svg>
-                                        <span class="pt-1">{{ $projectStats[$project->repo]['stargazers_count'] ?? 0 }} Stars</span>
+                                        <span>{{ $project->star_count ?? 0 }} Stars</span>
                                     </span>
                                     <span class="flex items-center">
                                         <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"></path></svg>
-                                        <span class="pt-1">{{ $projectStats[$project->repo]['forks_count'] ?? 0 }} Forks</span>
+                                        <span>{{ $project->fork_count ?? 0 }} Forks</span>
                                     </span>
                                 </div>
                             </div>
