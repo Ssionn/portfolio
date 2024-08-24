@@ -67,7 +67,7 @@ This project is a personal developer portfolio showcasing my skills, projects, a
 
 7. Set up your GitHub Personal Access Token in the `.env` file:
    ```
-   GITHUB_TOKEN=your_token_here
+   GITHUB_API_TOKEN=your_token_here
    ```
 
 ## Usage
