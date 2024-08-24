@@ -19,7 +19,7 @@
 
     <div class="flex flex-col mt-10 items-center p-2 sm:p-0 space-y-4">
         @foreach ($projects as $project)
-            <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg w-full sm:w-2/4 md:w-1/4 p-4 relative">
+            <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg w-full sm:w-3/4 md:w-2/4 p-4 relative">
                 <div class="absolute top-4 right-4">
                     <a href="{{ route('portfolio') }}">
                         <img src="{{ asset('storage/images/gear-black.svg') }}"
