@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateProjectLink;
+use App\Http\Requests\UpdateProjectLink;
 use App\Models\Project;
 use Hashids\Hashids;
-use Illuminate\Http\Request;
 
 class PanelController extends Controller
 {
@@ -29,19 +30,13 @@ class PanelController extends Controller
         return view('admin.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateProjectLink $createProjectLink)
     {
-        $request->validate([
-            'createRepoOwner' => 'required|string',
-            'createRepoName' => 'required|string',
-            'description' => 'required|string',
-        ]);
-
         $this->project = new Project;
 
-        $this->project->repo = $request->createRepoName;
-        $this->project->owner = $request->createRepoOwner;
-        $this->project->description = $request->description;
+        $this->project->repo = $createProjectLink->createRepoName;
+        $this->project->owner = $createProjectLink->createRepoOwner;
+        $this->project->description = $createProjectLink->description;
 
         $this->project->save();
 
@@ -59,21 +54,15 @@ class PanelController extends Controller
         ]);
     }
 
-    public function update(Request $request, $projectId)
+    public function update(UpdateProjectLink $updateProjectLink, $projectId)
     {
-        $request->validate([
-            'repoOwner' => 'required|string',
-            'repoName' => 'required|string',
-            'description' => 'required|string',
-        ]);
-
         $decodedProjectId = $this->decodeHash($projectId);
 
         $this->project = Project::find($decodedProjectId);
 
-        $this->project->owner = $request->repoOwner;
-        $this->project->repo = $request->repoName;
-        $this->project->description = $request->description;
+        $this->project->owner = $updateProjectLink->repoOwner;
+        $this->project->repo = $updateProjectLink->repoName;
+        $this->project->description = $updateProjectLink->description;
 
         $this->project->save();
 
