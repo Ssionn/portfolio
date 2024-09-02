@@ -15,10 +15,9 @@
         <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('android-chrome-192x192.png') }}">
         <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('android-chrome-512x512.png') }}">
 
-        <title>{{ __('portfolio.title') }}</title>
+        @googlefonts
 
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <title>{{ __('portfolio.title') }}</title>
 
         @vite(['resources/css/app.css','resources/js/app.js'])
     </head>
@@ -55,7 +54,7 @@
                             class="rounded-2xl w-72 h-72 object-cover mx-auto md:mx-0 shadow-lg hover:scale-105 transition duration-300 ease-in-out"
                         />
                     </div>
-                    <div class="w-full md:w-1/2 text-center md:text-left mt-6 md:mt-0">
+                    <div class="w-full md:w-1/2 text-center md:text-left mt-4 md:mt-0">
                         <h1 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#FFD54F] to-[#FFA000]">
                             {{ __('portfolio.introduction') }}
                         </h1>
