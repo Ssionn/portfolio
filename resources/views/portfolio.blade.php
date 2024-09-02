@@ -52,7 +52,7 @@
                         <img
                             src="{{ asset('storage/images/me.jpeg') }}"
                             alt="Casper's portrait"
-                            class="rounded-2xl w-72 h-72 object-cover mx-auto md:mx-0 shadow-lg"
+                            class="rounded-2xl w-72 h-72 object-cover mx-auto md:mx-0 shadow-lg hover:scale-105 transition duration-300 ease-in-out"
                         />
                     </div>
                     <div class="w-full md:w-1/2 text-center md:text-left mt-6 md:mt-0">

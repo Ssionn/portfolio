@@ -8,7 +8,6 @@
         "php": "^8.2",
         "hashids/hashids": "^5.0",
         "laravel/framework": "^11.9",
-        "laravel/telescope": "^5.2",
         "laravel/tinker": "^2.9",
         "ssionn/github-forge-laravel": "^v0.0.6"
     },
