@@ -5,10 +5,7 @@ namespace App\Jobs;
 use App\Models\Project;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
-use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Foundation\Queue\Queueable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 use Ssionn\GithubForgeLaravel\Facades\GithubForge;
 
 class updateProjectDetails implements ShouldQueue
