@@ -10,7 +10,6 @@ return [
         'header' => 'Projects',
 
         'data' => [
-            'contributors' => ':contributor_count Contributors',
             'commits' => ':commit_count Commits',
             'stars' => ':star_count Stars',
             'forks' => ':fork_count Forks',
