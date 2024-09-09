@@ -9,4 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory, Hashable;
+
+    protected $fillable = [
+        'owner',
+        'repo',
+        'description',
+        'star_count',
+        'fork_count',
+        'commit_count',
+    ];
 }
