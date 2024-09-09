@@ -27,11 +27,11 @@ class updateProjectDetails implements ShouldQueue
         foreach ($projects as $project) {
             $projectRepo = GithubForge::getRepository($project->owner, $project->repo);
 
-            $project->star_count = $projectRepo['stargazers_count'];
-            $project->fork_count = $projectRepo['forks_count'];
-            $project->commit_count = count(GithubForge::getCommitsFromRepository($project->owner, $project->repo));
-
-            $project->save();
+            $project->updateOrFail([
+                $project->star_count = $projectRepo['stargazers_count'],
+                $project->fork_count = $projectRepo['forks_count'],
+                $project->commit_count = count(GithubForge::getCommitsFromRepository($project->owner, $project->repo)),
+            ]);
         }
 
         return $projects;
