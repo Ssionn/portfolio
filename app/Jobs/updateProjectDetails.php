@@ -32,8 +32,6 @@ class updateProjectDetails implements ShouldQueue
             $project->commit_count = count(GithubForge::getCommitsFromRepository($project->owner, $project->repo));
 
             $project->save();
-
-            dump($project);
         }
 
         return $projects;
