@@ -28,9 +28,9 @@ class updateProjectDetails implements ShouldQueue
             $projectRepo = GithubForge::getRepository($project->owner, $project->repo);
 
             $project->updateOrFail([
-                $project->star_count = $projectRepo['stargazers_count'],
-                $project->fork_count = $projectRepo['forks_count'],
-                $project->commit_count = count(GithubForge::getCommitsFromRepository($project->owner, $project->repo)),
+                'star_count' => $projectRepo['stargazers_count'],
+                'fork_count' => $projectRepo['forks_count'],
+                'commit_count' => count(GithubForge::getCommitsFromRepository($project->owner, $project->repo)),
             ]);
         }
 
