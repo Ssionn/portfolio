@@ -2,7 +2,7 @@
     <div
         class="flex flex-col items-center sm:items-start sm:flex-row justify-center space-x-0 sm:space-x-16 sm:space-y-0 space-y-8">
         <div>
-            <img src="{{ asset('images/me.jpeg') }}" alt="Ssionn"
+            <img src="{{ asset('storage/images/me.jpeg') }}" alt="Ssionn"
                 class="w-full h-76 rounded-xl object-cover hover:scale-105 transition ease-in-out duration-700">
         </div>
         <div

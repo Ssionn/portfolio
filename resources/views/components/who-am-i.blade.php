@@ -11,7 +11,7 @@
             </p>
         </div>
         <div>
-            <img src="{{ asset('images/php.png') }}" alt="Ssionn"
+            <img src="{{ asset('storage/images/php.png') }}" alt="Ssionn"
                 class="w-72 h-72 rounded-xl object-cover hover:scale-105 transition ease-in-out duration-700">
         </div>
     </div>
