@@ -25,6 +25,8 @@ return [
         ],
     ],
 
+    'index' => [],
+
     'create' => [
         'title' => 'Create your github project',
         'description' => 'Add a project to your portfolio',
