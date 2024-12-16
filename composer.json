@@ -12,6 +12,7 @@
         "hashids/hashids": "^5.0",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "sentry/sentry-laravel": "^4.10",
         "spatie/laravel-google-fonts": "^1.4",
         "ssionn/github-forge-laravel": "^v0.0.6"
     },
