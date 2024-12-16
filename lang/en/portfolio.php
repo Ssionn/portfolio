@@ -28,7 +28,9 @@ return [
     'copyright' => ':date Casper Kizewski. All rights reserved.',
 
     'links' => [
+        'github_pretext' => 'View the source code on ',
         'github' => 'GitHub',
+        'license_pretext' => 'Licensed under the ',
         'license' => 'MIT License',
     ],
 ];

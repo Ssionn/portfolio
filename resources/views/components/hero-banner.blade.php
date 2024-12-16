@@ -11,7 +11,7 @@
                 {{ $portfolio->name ?? 'Hi, My name is No name.' }}
             </h1>
 
-            <p class="max-w-lg text-xl font-semibold text-primary-superdark">
+            <p class="text-start max-w-lg text-xl font-semibold text-primary-superdark">
                 {{ $portfolio->description ?? 'No description.' }}
             </p>
         </div>

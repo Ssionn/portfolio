@@ -6,7 +6,7 @@
             <h1 class="text-3xl sm:text-4xl font-bold text-primary-superdark">
                 {{ __('portfolio.who_am_i.title', ['title' => $who->name]) }}
             </h1>
-            <p class="max-w-lg text-center text-xl font-semibold text-primary-superdark">
+            <p class="max-w-lg text-start text-xl font-semibold text-primary-superdark">
                 {{ __('portfolio.who_am_i.description', ['description' => $who->description]) }}
             </p>
         </div>
