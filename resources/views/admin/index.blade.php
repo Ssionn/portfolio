@@ -1,4 +1,15 @@
 <x-panel-layout>
+    @if ($errors->any())
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <ul class="mt-3 list-disc list-inside">
+                @foreach ($errors->all() as $error)
+                    <li>
+                        {{ $error }}
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="p-2 sm:p-4">
         <div class="flex justify-center items-center">
             <div class="w-full sm:w-3/4 md:w-2/3">

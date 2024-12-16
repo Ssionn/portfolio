@@ -18,6 +18,7 @@ class Project extends Model
         'star_count',
         'fork_count',
         'commit_count',
+        'user_id',
     ];
 
     public function user(): BelongsTo
