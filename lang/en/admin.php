@@ -29,6 +29,11 @@ return [
 
     'edit' => [
         'title' => 'Editing :repository',
+
+        'buttons' => [
+            'delete' => 'Delete project',
+            'save' => 'Save changes',
+        ],
     ],
 
     'create' => [

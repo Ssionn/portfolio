@@ -7,10 +7,12 @@ use App\Http\Requests\CreateProjectLink;
 use App\Http\Requests\UpdateProjectLink;
 use App\Models\Project;
 use Hashids\Hashids;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class PanelController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         $projects = auth()->user()->projects()->get();
 
@@ -19,66 +21,67 @@ class PanelController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(): View
     {
         return view('admin.create');
     }
 
-    public function store(CreateProjectLink $createProjectLink)
+    public function store(CreateProjectLink $createProjectLink): RedirectResponse
     {
-        $this->project = new Project;
+        $project = Project::create([
+            'repo' => $createProjectLink->createRepoName,
+            'owner' => $createProjectLink->createRepoOwner,
+            'description' => $createProjectLink->description,
+            'user_id' => auth()->user()->id,
+        ]);
 
-        $this->project->repo = $createProjectLink->createRepoName;
-        $this->project->owner = $createProjectLink->createRepoOwner;
-        $this->project->description = $createProjectLink->description;
-
-        $this->project->save();
+        $project->save();
 
         return redirect()->route('admin.index');
     }
 
-    public function edit($projectId)
+    public function edit($projectId): View
     {
         $decodedProjectId = $this->decodeHash($projectId);
 
-        $this->project = Project::find($decodedProjectId);
+        $project = Project::find($decodedProjectId);
 
         return view('admin.edit', [
-            'project' => $this->project,
+            'project' => $project,
         ]);
     }
 
-    public function update(UpdateProjectLink $updateProjectLink, $projectId)
+    public function update(UpdateProjectLink $updateProjectLink, $projectId): RedirectResponse
     {
         $decodedProjectId = $this->decodeHash($projectId);
 
-        $this->project = Project::find($decodedProjectId);
+        $project = Project::find($decodedProjectId);
 
-        $this->project->owner = $updateProjectLink->repoOwner;
-        $this->project->repo = $updateProjectLink->repoName;
-        $this->project->description = $updateProjectLink->description;
+        $project->owner = $updateProjectLink->repoOwner;
+        $project->repo = $updateProjectLink->repoName;
+        $project->description = $updateProjectLink->description;
 
-        $this->project->save();
+        $project->save();
 
         return redirect()->route('admin.index');
     }
 
-    public function delete($projectId)
+    public function delete($projectId): RedirectResponse
     {
         $decodedProjectId = $this->decodeHash($projectId);
 
-        $this->project = Project::find($decodedProjectId);
+        $project = Project::find($decodedProjectId);
 
-        if (! $this->project) {
-            return;
+        if (! $project) {
+            return redirect()->route('admin.index')->with('error', 'Project not found');
         }
 
-        $this->project->delete();
+        $project->delete();
 
         return redirect()->route('admin.index');
     }
 
-    protected function decodeHash($projectId)
+    protected function decodeHash($projectId): int
     {
         $hashids = new Hashids(config('hashids.salt'), config('hashids.min_length'));
 
@@ -91,14 +94,5 @@ class PanelController extends Controller
         $decryptedProjectId = $decoded[0];
 
         return $decryptedProjectId;
-    }
-
-    protected function truncateString($string, $limit)
-    {
-        if (strlen($string) > $limit) {
-            return substr($string, 0, $limit) . '...';
-        }
-
-        return $string;
     }
 }
