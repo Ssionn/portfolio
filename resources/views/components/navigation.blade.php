@@ -1,6 +1,6 @@
 <div class="flex items-center h-16 py-2 px-8 rounded-md">
     <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 justify-between items-center w-full">
-        <div class="flex flex-row space-x-4">
+        <div class="flex flex-row items-center space-x-4">
             <a href="https://github.com/ssionn/portfolio" target="_blank">
                 <img src="{{ asset('storage/images/github-mark-white.svg') }}"
                     class="h-5 w-5 hover:scale-125 transition ease-in-out duration-300" />
@@ -13,6 +13,13 @@
                 <img src="{{ asset('storage/images/x-logo.svg') }}"
                     class="h-5 w-5 hover:scale-125 transition ease-in-out duration-300" />
             </a>
+
+            @auth
+                <a href="{{ route('admin.index') }}">
+                    <img src="{{ asset('storage/images/login-white.svg') }}"
+                        class="h-5 w-5 hover:scale-125 transition ease-in-out duration-300" />
+                </a>
+            @endauth
         </div>
 
         <div class="flex flex-row space-x-4">

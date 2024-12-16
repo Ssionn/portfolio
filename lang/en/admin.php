@@ -11,5 +11,24 @@ return [
         ],
 
         'button' => 'Login',
-    ]
+    ],
+
+    'panel_navigation' => [
+        'navigation_tabs' => [
+            'home' => 'Home',
+            'create' => 'Create',
+        ],
+
+        'dropdown' => [
+            'settings' => 'Settings',
+            'logout' => 'Sign out',
+        ],
+    ],
+
+    'create' => [
+        'title' => 'Create your github project',
+        'description' => 'Add a project to your portfolio',
+
+        'button' => 'Create project',
+    ],
 ];

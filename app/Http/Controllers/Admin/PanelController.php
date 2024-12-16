@@ -10,18 +10,12 @@ use Hashids\Hashids;
 
 class PanelController extends Controller
 {
-    public $project;
-
     public function index()
     {
-        $this->project = Project::all()->map(function ($project) {
-            $project->truncated_description = $this->truncateString($project->description, 20);
-
-            return $project;
-        });
+        $projects = auth()->user()->projects()->get();
 
         return view('admin.index', [
-            'projects' => $this->project,
+            'projects' => $projects,
         ]);
     }
 
