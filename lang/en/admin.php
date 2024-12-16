@@ -20,6 +20,7 @@ return [
         ],
 
         'dropdown' => [
+            'portfolio' => 'Go to portfolio',
             'settings' => 'Settings',
             'logout' => 'Sign out',
         ],
