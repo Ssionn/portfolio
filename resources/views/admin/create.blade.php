@@ -15,8 +15,8 @@
                         @csrf
 
                         <div class="flex flex-row items-center space-x-2">
-                            <input type="text" placeholder="Project owner" id="createRepoOwner"
-                                name="createRepoOwner"
+                            <input type="text" placeholder="Project owner" value="{{ auth()->user()->name }}"
+                                id="createRepoOwner" name="createRepoOwner"
                                 class="w-full border-gray-200 rounded-lg placeholder:text-gray-300" />
 
                             <input type="text" placeholder="Project name" id="createRepoName" name="createRepoName"

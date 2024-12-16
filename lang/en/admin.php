@@ -27,6 +27,10 @@ return [
 
     'index' => [],
 
+    'edit' => [
+        'title' => 'Editing :repository',
+    ],
+
     'create' => [
         'title' => 'Create your github project',
         'description' => 'Add a project to your portfolio',
