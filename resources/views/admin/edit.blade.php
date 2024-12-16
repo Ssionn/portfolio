@@ -1,54 +1,46 @@
-<x-app-layout>
+<x-panel-layout>
+    <div class="p-2 sm:p-4">
+        <div class="flex justify-center items-center">
+            <div class="bg-white w-full sm:w-3/4 md:w-2/3 p-4 rounded-md">
+                <div class="inline-flex justify-between items-center w-full">
+                    <h1 class="font-semibold text-xl">
+                        {{ __('admin.edit.title', ['repository' => $project->owner . '/' . $project->repo]) }}
+                    </h1>
+                    <div>
+                        <form action="{{ route('admin.delete', $project->hashid) }}" method="post">
+                            @csrf
+                            @method('DELETE')
 
-    <div class="flex justify-between items-center bg-white p-4 rounded-b-md">
-        <div>
-            <span class="text-2xl font-semibold">{{ __($project->repo) }}</span>
-        </div>
-    </div>
+                            <button type="submit" class="bg-red-500 hover:bg-red-600 p-2 rounded-md text-white">
+                                {{ __('admin.edit.buttons.delete') }}
+                            </button>
+                        </form>
+                    </div>
+                </div>
 
-    <div class="flex flex-col justify-center mt-36 items-center p-2">
-        <div class="bg-white w-full sm:w-2/3 md:w-1/3 p-4 rounded-md">
-            <h1 class="text-center p-2 font-semibold text-xl">
-                {{ __('Project details') }}
-            </h1>
+                <div class="mt-4">
+                    <form action="{{ route('admin.update', $project->hashid) }}" method="post" class="space-y-4">
+                        @csrf
+                        @method('PATCH')
 
-            <div class="mt-4">
-                <form action="" method="post" class="space-y-4">
-                    @csrf
-                    @method('PATCH')
+                        <div class="flex flex-row items-center space-x-2">
+                            <input type="text" placeholder="Project owner" id="repoOwner"
+                                value="{{ auth()->user()->name }}" name="repoOwner"
+                                class="w-full border-gray-200 rounded-lg placeholder:text-gray-300" />
 
-                    <input
-                        type="text"
-                        placeholder="Project Owner"
-                        id="repoOwner"
-                        name="repoOwner"
-                        value="{{ old('projectOwner', $project->owner) }}"
-                        class="appearance-none rounded-md placeholder:text-gray-300 border border-gray-300 w-full bg-gray-100"
-                    />
+                            <input type="text" placeholder="Project name" id="repoName" value="{{ $project->repo }}"
+                                name="repoName" class="w-full border-gray-200 rounded-lg placeholder:text-gray-300" />
+                        </div>
 
-                    <input
-                        type="text"
-                        placeholder="Project name"
-                        id="repoName"
-                        name="repoName"
-                        value="{{ old('projectName', $project->repo) }}"
-                        class="appearance-none rounded-md placeholder:text-gray-300 border border-gray-300 w-full bg-gray-100"
-                    />
+                        <textarea class="w-full border border-gray-300 placeholder:text-gray-300 rounded-md h-36 resize-y"
+                            placeholder="Add a description here" id="description" name="description">{{ $project->description }}</textarea>
 
-                    <textarea
-                        class="w-full border border-gray-300 bg-gray-100 placeholder:text-gray-300 rounded-md h-36 resize-y" placeholder="Add a description here."
-                        id="description"
-                        name="description"
-                    >
-                        {{ preg_replace('/\s+/', ' ', old('description', $project->description)) }}
-                    </textarea>
-
-                    <button type="submit" class="w-full bg-blue-400 p-2 rounded-md text-white">
-                        {{ __('Save') }}
-                    </button>
-                </form>
+                        <button type="submit" class="w-full bg-primary-light hover:bg-primary-lighter p-2 rounded-md">
+                            {{ __('admin.edit.buttons.save') }}
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-
-</x-app-layout>
+</x-panel-layout>
