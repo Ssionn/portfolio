@@ -14,7 +14,7 @@
             </div>
 
             <div class="flex flex-row space-x-4 justify-end">
-                <button data-dropdown-toggle="user_dropdown">
+                <button data-dropdown-toggle="user_dropdown" class="hover:scale-110 transition ease-in-out duration-300">
                     <span class="text-lg font-semibold">{{ auth()->user()->name }}</span>
                 </button>
             </div>
@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('admin.settings.index') }}"
                     class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                     <span class="text-sm">{{ __('admin.panel_navigation.dropdown.settings') }}</span>
                 </a>

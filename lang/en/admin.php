@@ -43,4 +43,24 @@ return [
 
         'button' => 'Create project',
     ],
+
+    'settings' => [
+        'hero_editor' => [
+            'title' => 'Hero editor',
+            'description' => 'Edit your hero banner',
+
+            'buttons' => [
+                'save' => 'Save changes',
+            ],
+        ],
+
+        'who_editor' => [
+            'title' => 'Who am I',
+            'description' => 'Edit your personal information',
+
+            'buttons' => [
+                'save' => 'Save changes',
+            ],
+        ],
+    ],
 ];

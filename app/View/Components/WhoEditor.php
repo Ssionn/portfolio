@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class WhoAmI extends Component
+class WhoEditor extends Component
 {
     public function __construct(
         public $who,
@@ -14,6 +14,6 @@ class WhoAmI extends Component
 
     public function render(): View|Closure|string
     {
-        return view('components.who-am-i');
+        return view('components.who-editor');
     }
 }

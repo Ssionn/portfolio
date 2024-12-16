@@ -7,8 +7,7 @@
         </div>
 
         <div class="mt-36">
-            <x-who-am-i title="Who am I?"
-                description="A no bullsh!t programmer. I love to learn new things and am not afraid to ask. And if you really want to know, I use PHP mostly with a little javascript. (But we don't talk about that)" />
+            <x-who-am-i :who="$who" />
         </div>
 
         <div class="mt-36">
