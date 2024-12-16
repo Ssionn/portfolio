@@ -18,13 +18,16 @@
 
     <title>{{ __('portfolio.title') }}</title>
 
+    @googlefonts
+
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gradient-to-b min-h-screen from-primary-default via-lighter to-light m-0">
+<body class="bg-gradient-to-b min-h-screen m-0 from-primary-default via-primary-lighter to-primary-light">
+    <x-admin-navigation />
 
     <main>
         {{ $slot }}

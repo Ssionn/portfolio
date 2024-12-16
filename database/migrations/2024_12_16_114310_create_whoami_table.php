@@ -12,11 +12,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('whoami', function (Blueprint $table) {
             $table->id();
-            $table->string('owner')->nullable();
-            $table->string('repo')->nullable();
-            $table->string('description')->nullable();
+            $table->string('name');
+            $table->string('description');
+            $table->string('fallback');
             $table->foreignIdFor(User::class)->nullable();
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('whoami');
     }
 };
