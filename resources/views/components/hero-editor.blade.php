@@ -11,7 +11,7 @@
             <form action="{{ route('admin.settings.updateHero') }}" method="post" class="space-y-4">
                 @csrf
 
-                <input type="text" placeholder="Hero title" id="hero_title" value="{{ $portfolio->name }}"
+                <input type="text" placeholder="Hero title" id="hero_title" value="{{ $portfolio->name ?? '' }}"
                     name="hero_title" class="w-full border-gray-200 rounded-lg placeholder:text-gray-300" />
 
                 <textarea class="w-full border border-gray-300 placeholder:text-gray-300 rounded-md h-10 resize-y"
