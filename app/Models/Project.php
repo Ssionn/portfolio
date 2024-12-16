@@ -18,4 +18,9 @@ class Project extends Model
         'fork_count',
         'commit_count',
     ];
+
+    public function getGithubImageAttribute()
+    {
+        return "https://opengraph.githubassets.com/$this->id/$this->owner/$this->repo";
+    }
 }

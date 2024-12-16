@@ -3,8 +3,17 @@
 return [
     'title' => 'SsionnHub',
 
-    'introduction' => 'Hi, My name is Casper',
-    'description' => "Passionate PHP developer specializing in Laravel and Symfony. I craft elegant solutions to complex problems, always eager to learn and apply new technologies. Gaming enthusiast and tech hobbyist, I'm on a mission to create intuitive digital experiences that push boundaries.",
+    'navigation_tabs' => [
+        'portfolio' => 'Home',
+        'who_am_i' => 'Who Am I?',
+        'projects' => 'Projects',
+        'contact' => 'Contact',
+    ],
+
+    'who_am_i' => [
+        'title' => ':title',
+        'description' => ':description'
+    ],
 
     'projects' => [
         'header' => 'Projects',
