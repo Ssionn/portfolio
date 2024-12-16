@@ -2,22 +2,22 @@
     <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 justify-between items-center w-full">
         <div class="flex flex-row items-center space-x-4">
             <a href="https://github.com/ssionn/portfolio" target="_blank">
-                <img src="{{ asset('storage/images/github-mark-white.svg') }}"
+                <img src="{{ asset('storage/images/github.svg') }}"
                     class="h-5 w-5 hover:scale-125 transition ease-in-out duration-300" />
             </a>
             <a href="https://www.linkedin.com/in/ssionn/" target="_blank">
-                <img src="{{ asset('storage/images/linkedIn.png') }}"
-                    class="h-5 w-5 hover:scale-125 transition ease-in-out duration-300" />
+                <img src="{{ asset('storage/images/linkedIn.svg') }}"
+                    class="h-8 w-8 hover:scale-125 transition ease-in-out duration-300" />
             </a>
             <a href="https://x.com/ssionn2_" target="_blank">
-                <img src="{{ asset('storage/images/x-logo.svg') }}"
+                <img src="{{ asset('storage/images/x-logo.png') }}"
                     class="h-5 w-5 hover:scale-125 transition ease-in-out duration-300" />
             </a>
 
             @auth
                 <a href="{{ route('admin.index') }}">
-                    <img src="{{ asset('storage/images/login-white.svg') }}"
-                        class="h-5 w-5 hover:scale-125 transition ease-in-out duration-300" />
+                    <img src="{{ asset('storage/images/login.png') }}"
+                        class="h-7 w-7 hover:scale-125 transition ease-in-out duration-300" />
                 </a>
             @endauth
         </div>

@@ -11,7 +11,7 @@ Route::get('/admin/login', [LoginController::class, 'index'])->name('login.view'
 Route::post('/admin/login', [LoginController::class, 'authenticate'])->name('login');
 
 Route::middleware(['auth'])->group(function () {
-    Route::prefix('/admin-panel')->group(function () {
+    Route::prefix('/admin')->group(function () {
         Route::get('/', [PanelController::class, 'index'])->name('admin.index');
         Route::get('/create', [PanelController::class, 'create'])->name('admin.create');
         Route::post('/create', [PanelController::class, 'store'])->name('admin.store');
