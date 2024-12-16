@@ -12,7 +12,7 @@ return [
 
     'who_am_i' => [
         'title' => ':title',
-        'description' => ':description'
+        'description' => ':description',
     ],
 
     'projects' => [
