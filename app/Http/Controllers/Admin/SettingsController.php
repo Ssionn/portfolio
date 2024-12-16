@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Me;
@@ -27,7 +27,7 @@ class SettingsController extends Controller
         $portfolio = auth()->user()->portfolio()->first();
 
         if (! $portfolio) {
-            $portfolio = new Portfolio();
+            $portfolio = new Portfolio;
         }
 
         $portfolio->name = $request->hero_title;
@@ -45,7 +45,7 @@ class SettingsController extends Controller
         $who = auth()->user()->me()->first();
 
         if (! $who) {
-            $who = new Me();
+            $who = new Me;
         }
 
         $who->name = $request->who_title;

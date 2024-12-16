@@ -16,7 +16,7 @@ class Portfolio extends Model
         'name',
         'description',
         'fallback',
-        'user_id'
+        'user_id',
     ];
 
     public function user(): BelongsTo
