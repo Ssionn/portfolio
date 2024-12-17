@@ -26,7 +26,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gradient-to-b min-h-screen m-0 from-primary-default via-primary-lighter to-primary-light">
+<body class="min-h-screen m-0 bg-primary-default">
     <x-admin-navigation />
 
     <main>

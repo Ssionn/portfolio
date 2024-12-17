@@ -24,7 +24,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gradient-to-b min-h-screen from-primary-default via-lighter to-light m-0">
+<body class="bg-gradient-to-b min-h-screen from-primary-default m-0">
 
     <main>
         {{ $slot }}

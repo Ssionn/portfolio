@@ -13,4 +13,5 @@
         <div class="mt-36">
             <x-projects :projects="$projects" />
         </div>
+    </div>
 </x-app-layout>
