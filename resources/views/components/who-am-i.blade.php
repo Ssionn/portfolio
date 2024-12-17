@@ -4,10 +4,10 @@
         <div
             class="flex flex-col justify-center items-center sm:space-y-8 hover:scale-105 transition ease-in-out duration-700">
             <h1 class="text-3xl sm:text-4xl font-bold text-primary-superdark">
-                {{ __('portfolio.who_am_i.title', ['title' => $who->name ?? '']) }}
+                {{ __('portfolio.who_am_i.title', ['title' => $who->name ?? 'Who am I?']) }}
             </h1>
             <p class="max-w-lg text-start text-xl font-semibold text-primary-superdark">
-                {{ __('portfolio.who_am_i.description', ['description' => $who->description ?? '']) }}
+                {{ __('portfolio.who_am_i.description', ['description' => $who->description ?? 'Something about me']) }}
             </p>
         </div>
         <div>

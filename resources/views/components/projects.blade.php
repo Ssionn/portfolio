@@ -10,7 +10,7 @@
                 @foreach ($projects as $project)
                     <div
                         class="flex flex-col items-center justify-center bg-white rounded-lg p-2 hover:scale-105 transition ease-in-out duration-700">
-                        <a href="https://github.com/{{ $project->owner }}/{{ $project->repo }}">
+                        <a href="https://github.com/{{ $project->owner }}/{{ $project->repo }}" target="_blank">
                             <img src="{{ $project->getGithubImageAttribute() }}" class="">
 
                             <div class="inline-flex justify-center items-center space-x-2 w-full mt-2">

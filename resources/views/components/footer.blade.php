@@ -1,4 +1,4 @@
-<div class="bottom-0 w-full h-16 mt-36">
+<div class="bottom-0 w-full h-16 mt-36 text-white">
     <div class="flex sm:flex-row sm:justify-evenly items-center">
         <span>
             {{ __('portfolio.links.license_pretext') }}

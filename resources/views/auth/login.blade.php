@@ -24,7 +24,7 @@
 
                     <div>
                         <button type="submit"
-                            class="py-1 w-full text-primary-superdark bg-primary-light rounded-full hover:bg-primary-lighter transition-all duration-300">
+                            class="py-1 w-full text-primary-default bg-primary-light rounded-full hover:bg-primary-superdark transition-all duration-300">
                             {{ __('admin.login.button') }}
                         </button>
                     </div>
