@@ -6,6 +6,7 @@ return [
     'navigation_tabs' => [
         'portfolio' => 'Home',
         'who_am_i' => 'Who Am I?',
+        'company_website' => 'CKWD',
         'projects' => 'Projects',
         'contact' => 'Contact',
     ],
@@ -13,6 +14,13 @@ return [
     'who_am_i' => [
         'title' => ':title',
         'description' => ':description',
+    ],
+
+    'company_website' => [
+        'header' => 'CKWD',
+
+        'description' => 'Visit the CKWD website to learn more about the services I offer.',
+        'link' => 'Visit CK Web development',
     ],
 
     'projects' => [

@@ -11,6 +11,10 @@
         </div>
 
         <div class="mt-36">
+            <x-web-ref />
+        </div>
+
+        <div class="mt-36">
             <x-projects :projects="$projects" />
         </div>
     </div>

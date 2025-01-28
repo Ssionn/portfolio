@@ -32,6 +32,10 @@
                 {{ __('portfolio.navigation_tabs.who_am_i') }}
             </x-navigation-tab>
 
+            <x-navigation-tab href="#company-website">
+                {{ __('portfolio.navigation_tabs.company_website') }}
+            </x-navigation-tab>
+
             <x-navigation-tab href="#projects">
                 {{ __('portfolio.navigation_tabs.projects') }}
             </x-navigation-tab>
